@@ -33,6 +33,7 @@
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
     "test": "react-scripts test --coverage",
     "lint": "eslint src --ignore-pattern validity.test.js --ext .js --ext .jsx",
     "zip": "bestzip CSE186-Assignment5-Submission.zip src/*"
