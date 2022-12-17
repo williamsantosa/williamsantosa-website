@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.61891687.css","mappings":"AAAA,SAEE,iBAAkB,CAClB,eAAgB,CAChB,gBAAiB,CAHjB,YAIF,CAEA,cACE,gBACF","sources":["App.css"],"sourcesContent":[".rounded {\r\n  padding: 15px;\r\n  border-radius: 5px;\r\n  margin-left: 5px;\r\n  margin-right: 5px;\r\n}\r\n\r\n.roundedImage {\r\n  border-radius: 2%;\r\n}"],"names":[],"sourceRoot":""}
