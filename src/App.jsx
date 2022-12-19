@@ -10,7 +10,8 @@ import React from 'react';
 // import {useState, useEffect, useCallback} from 'react';
 import {
   Typography, CssBaseline, AppBar, Toolbar,
-  Button, Box, Stack, IconButton,
+  Button, Box, Stack, IconButton, Card, CardActions,
+  CardContent,
   // Typography, AppBar, Toolbar, CssBaseline,
   // Drawer, Box, Divider,
   // IconButton, Button,
@@ -62,7 +63,7 @@ const experiences = [
     title: 'Instructor',
     time: 'Jul 2017 - Aug 2021',
     company: `Koo's Martial Arts`,
-    content: 'Taught students forms, kicks, and the hard-working philsophy' +
+    content: 'Taught students forms, kicks, and the hard-working philsophy ' +
       'of Taekwondo.',
   },
   {
@@ -129,7 +130,7 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline/>
-        <AppBar position="static"
+        <AppBar position="static" id="home"
           style={{background: 'transparent'}}
         >
           <Toolbar>
@@ -139,21 +140,31 @@ function App() {
               alignItems="center"
               flex={1}
             >
-              <Button sx={{fontSize: 18}} component="label" color="tertiary">
-                Home
-              </Button>
-              <Button sx={{fontSize: 18}} component="label" color="tertiary">
-                About
-              </Button>
-              <Button sx={{fontSize: 18}} component="label" color="tertiary">
-                Experience
-              </Button>
-              <Button sx={{fontSize: 18}} component="label" color="tertiary">
-                Projects
-              </Button>
-              <Button sx={{fontSize: 18}} component="label" color="tertiary">
-                Contact
-              </Button>
+              <a href='#home' style={{textDecoration: 'none'}}>
+                <Button sx={{fontSize: 18}} component="label" color="tertiary">
+                  Home
+                </Button>
+              </a>
+              <a href='#about' style={{textDecoration: 'none'}}>
+                <Button sx={{fontSize: 18}} component="label" color="tertiary">
+                  About
+                </Button>
+              </a>
+              <a href='#experience' style={{textDecoration: 'none'}}>
+                <Button sx={{fontSize: 18}} component="label" color="tertiary">
+                  Experience
+                </Button>
+              </a>
+              <a href='#projects' style={{textDecoration: 'none'}}>
+                <Button sx={{fontSize: 18}} component="label" color="tertiary">
+                  Projects
+                </Button>
+              </a>
+              <a href='#contact' style={{textDecoration: 'none'}}>
+                <Button sx={{fontSize: 18}} component="label" color="tertiary">
+                  Contact
+                </Button>
+              </a>
             </Box>
           </Toolbar>
         </AppBar>
@@ -174,9 +185,11 @@ function App() {
               alignItems="center"
               flex={1}
             >
-              <IconButton size='large' flex={0} sx={{mt: 1}}>
-                <ExpandMoreIcon fontSize="large" sx={{color: 'white'}}/>
-              </IconButton>
+              <a href='#about' style={{textDecoration: 'none'}}>
+                <IconButton size='large' flex={0} sx={{mt: 1}}>
+                  <ExpandMoreIcon fontSize="large" sx={{color: 'white'}}/>
+                </IconButton>
+              </a>
               <Typography variant='h2' color='tertiary.main'
                 sx={{textShadow: '1px 0px 1px grey'}}
               >
@@ -209,6 +222,7 @@ function App() {
           justifyContent="center"
           alignItems="center"
           flex={1}
+          id="about"
         >
           <Box sx={{
             mt: 4, ml: '1%',
@@ -242,23 +256,24 @@ function App() {
             sx={{
               mt: 0.5, background: '#EDBEA4', width: '100%', padding: '20px',
             }}
+            id="experience"
           >
             <Typography variant='h3' color='tertiary.main'
               sx={{ml: 5}}
             >
-              Experiences
+              Experience
             </Typography>
             <Timeline align="left">
               {experiences.map((exp, index) => (
                 <TimelineItem>
                   <TimelineOppositeContent style={{flex: 0.3}}>
                     <Stack>
-                    <Typography variant='h6' color='tertiary.main'>
-                      {exp.title}
-                    </Typography>
-                    <Typography variant='body4' color='tertiary.main'>
-                      {exp.time}
-                    </Typography>
+                      <Typography variant='h6' color='tertiary.main'>
+                        {exp.title}
+                      </Typography>
+                      <Typography variant='body4' color='tertiary.main'>
+                        {exp.time}
+                      </Typography>
                     </Stack>
                   </TimelineOppositeContent>
                   <TimelineSeparator>
@@ -283,19 +298,110 @@ function App() {
           </Box>
           <Box
             sx={{
-              mt: 0.5, width: '100%', padding: '20px',
+              width: '100%', padding: '20px',
             }}
             display="flex"
             justifyContent="center"
             alignItems="center"
             flex={1}
+            id="projects"
           >
-            <Typography variant='h3' color='tertiary.main'>
-              Projects
-            </Typography>
+            <Stack spacing={2}>
+              <Box
+                sx={{
+                  width: '100%',
+                }}
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                flex={1}
+                id="projects"
+              >
+                <Typography variant='h3' color='tertiary.main'>
+                  Projects
+                </Typography>
+              </Box>
+              <Stack direction='row' spacing={4}>
+                <Card sx={{minWidth: 500, background: '#e3e3e3'}}>
+                  <CardContent>
+                    <Typography sx={{fontSize: 14}}
+                      color="#111111" gutterBottom
+                    >
+                      Discord Bot
+                    </Typography>
+                    <Typography variant="h5" component="div">
+                      Not Clash
+                    </Typography>
+                    <Typography sx={{mb: 1.5}} color="#808080">
+                      Python
+                    </Typography>
+                    <Typography variant="body2">
+                      Facilitates LoL 5v5 matches, stores in MySQL database
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small"
+                      href="https://github.com/williamsantosa/Not-Clash"
+                    >
+                      Visit Repository
+                    </Button>
+                  </CardActions>
+                </Card>
+                <Card sx={{minWidth: 500, background: '#e3e3e3'}}>
+                  <CardContent>
+                    <Typography sx={{fontSize: 14}}
+                      color="#111111" gutterBottom
+                    >
+                      Desktop App
+                    </Typography>
+                    <Typography variant="h5" component="div">
+                      YouToo
+                    </Typography>
+                    <Typography sx={{mb: 1.5}} color="#808080">
+                      Python
+                    </Typography>
+                    <Typography variant="body2">
+                      Downloads YouTube videos from streams.
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small"
+                      href="https://github.com/williamsantosa/YouToo"
+                    >
+                      Visit Repository
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Stack>
+            </Stack>
           </Box>
         </Stack>
-        <Box sx={{mb: 500}}></Box>
+        <Box
+          sx={{
+            mt: 0.5, width: '100%', padding: '20px',
+            background: '#808080',
+          }}
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          flex={1}
+          id="contact"
+        >
+          <Stack>
+            <Stack direction='row'>
+              <Button href="https://github.com/williamsantosa">
+                <GitHubIcon sx={{color: 'white'}}
+                />
+              </Button>
+              <Button href="https://www.linkedin.com/in/williamsantosa/">
+                <LinkedInIcon sx={{color: 'white'}}/>
+              </Button>
+              <Button href="mailto:williamwsantosa@gmail.com">
+                <EmailIcon sx={{color: 'white'}}/>
+              </Button>
+            </Stack>
+          </Stack>
+        </Box>
       </ThemeProvider>
     </>
   );
