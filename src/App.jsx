@@ -5,81 +5,23 @@
  * the express written permission of the copyright holder.
  */
 
-import './App.css';
 import React from 'react';
+import './App.css';
+import Bar from './components/Bar.jsx';
+import Footer from './components/Footer.jsx';
+import Home from './components/Home.jsx';
+import AboutMe from './components/AboutMe.jsx';
+import Experience from './components/Experience.jsx';
+import Projects from './components/Projects.jsx';
 // import {useState, useEffect, useCallback} from 'react';
-import {
-  Typography, CssBaseline, AppBar, Toolbar,
-  Button, Box, Stack, IconButton, Card, CardActions,
-  CardContent,
-  // Typography, AppBar, Toolbar, CssBaseline,
-  // Drawer, Box, Divider,
-  // IconButton, Button,
-  // ListItem, ListItemButton, ListItemIcon, ListItemText,
-  // Table, TableBody, TableCell, TableContainer,
-  // TableHead, TableRow, Paper,
-} from '@mui/material/';
-import {
-  Timeline, TimelineItem, TimelineSeparator,
-  TimelineConnector, TimelineContent, TimelineDot,
-  TimelineOppositeContent,
-} from '@mui/lab';
+import {CssBaseline, Box, Stack} from '@mui/material/';
 import {ThemeProvider, createTheme} from '@mui/material/styles';
 // import {deepPurple, pink} from '@mui/material/colors';
-import image from './media/portrait.jpg';
 import homeImage from './media/home.jpg';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
 // import MenuIcon from '@mui/icons-material/Menu';
 // import InboxIcon from '@mui/icons-material/Inbox';
 // import MailIcon from '@mui/icons-material/Mail';
 // import ClearIcon from '@mui/icons-material/Clear';
-
-const experiences = [
-  {
-    title: 'Software Engineering Intern',
-    time: 'Jun 2022 - Aug 2022',
-    company: 'Maxar Technologies',
-    content: 'Developed database installation tool for the ' +
-      'Intelsat C-band satellites launched by SpaceX on Nov 8th, 2022.',
-  },
-  {
-    title: 'Research Assistant',
-    time: 'Mar 2022 - Jun 2022',
-    company: 'Santa Cruz Institute for Particle Physics',
-    content: 'Developed machine learning program with Professor Nielsen ' +
-      'to determine factors affecting formation of the Higgs boson.',
-  },
-  {
-    title: 'Peer Navigator',
-    time: 'Jun 2021 - Dec 2021',
-    company: 'University of California, Santa Cruz',
-    content: 'Introduced freshmen and gave advice on how to succeed ' +
-      'in university. Held events, graded papers, and provided feedback.',
-  },
-  {
-    title: 'Instructor',
-    time: 'Jul 2017 - Aug 2021',
-    company: `Koo's Martial Arts`,
-    content: 'Taught students forms, kicks, and the hard-working philsophy ' +
-      'of Taekwondo.',
-  },
-  {
-    title: 'Reader',
-    time: 'Mar 2021 - Jun 2021',
-    company: 'UCSC Baskin School of Engineering',
-    content: `Graded and gave feedback to students' projects and classwork.`,
-  },
-];
-
-const styles = {
-  paperContainer: {
-    backgroundImage: `url(${homeImage})`,
-    backgroundRepeat: 'no-repeat',
-  },
-};
 
 const theme = createTheme({
   palette: {
@@ -121,289 +63,81 @@ const theme = createTheme({
   },
 });
 
+const styles = {
+  paperContainer: {
+    backgroundImage: `url(${homeImage})`,
+    backgroundRepeat: 'no-repeat',
+  },
+};
+
 /**
  * Returns app component
  * @return {object}
  */
 function App() {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <CssBaseline/>
-        <AppBar position="static" id="home"
-          style={{background: 'transparent'}}
-        >
-          <Toolbar>
-            <Box
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              flex={1}
-            >
-              <a href='#home' style={{textDecoration: 'none'}}>
-                <Button sx={{fontSize: 18}} component="label" color="tertiary">
-                  Home
-                </Button>
-              </a>
-              <a href='#about' style={{textDecoration: 'none'}}>
-                <Button sx={{fontSize: 18}} component="label" color="tertiary">
-                  About
-                </Button>
-              </a>
-              <a href='#experience' style={{textDecoration: 'none'}}>
-                <Button sx={{fontSize: 18}} component="label" color="tertiary">
-                  Experience
-                </Button>
-              </a>
-              <a href='#projects' style={{textDecoration: 'none'}}>
-                <Button sx={{fontSize: 18}} component="label" color="tertiary">
-                  Projects
-                </Button>
-              </a>
-              <a href='#contact' style={{textDecoration: 'none'}}>
-                <Button sx={{fontSize: 18}} component="label" color="tertiary">
-                  Contact
-                </Button>
-              </a>
-            </Box>
-          </Toolbar>
-        </AppBar>
-        <Box
-          sx={{mt: 0.5, background: '#EDBEA4', height: '100vh', width: '100%'}}
-          style={styles.paperContainer}
-        >
-          <Box
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            flex={1}
-          >
-            <Stack
-              spacing={4}
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              flex={1}
-            >
-              <a href='#about' style={{textDecoration: 'none'}}>
-                <IconButton size='large' flex={0} sx={{mt: 1}}>
-                  <ExpandMoreIcon fontSize="large" sx={{color: 'white'}}/>
-                </IconButton>
-              </a>
-              <Typography variant='h2' color='tertiary.main'
-                sx={{textShadow: '1px 0px 1px grey'}}
-              >
-                William Santosa
-              </Typography>
-              <Typography variant='h5' color='tertiary.main'
-                sx={{textShadow: '1px 0px 1px grey'}}
-              >
-                Computer Science | Database Systems | Software Engineer
-              </Typography>
-              <Stack direction='row'>
-                <Button href="https://github.com/williamsantosa">
-                  <GitHubIcon sx={{color: 'white'}}
-                  />
-                </Button>
-                <Button href="https://www.linkedin.com/in/williamsantosa/">
-                  <LinkedInIcon sx={{color: 'white'}}/>
-                </Button>
-                <Button href="mailto:williamwsantosa@gmail.com">
-                  <EmailIcon sx={{color: 'white'}}/>
-                </Button>
-              </Stack>
-            </Stack>
-          </Box>
-        </Box>
-        <Box/>
-        <Stack
-          spacing={4}
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          flex={1}
+    <ThemeProvider theme={theme}>
+      <CssBaseline/>
+      <Bar/>
+      <Box
+        sx={{mt: 0.5, background: '#EDBEA4', height: '100vh', width: '100%'}}
+        style={styles.paperContainer}
+      >
+        <Home/>
+      </Box>
+      <Box/>
+      <Stack
+        spacing={4}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        flex={1}
+      >
+        <Box sx={{
+          mt: 4, ml: '1%',
+          padding: '20px',
+          width: '70%',
+        }}
           id="about"
         >
-          <Box sx={{
-            mt: 4, ml: '1%',
-            padding: 3,
-            width: '70%', height: '300px',
-          }}
-          >
-            <Box sx={{ml: 5}}/>
-            <Stack direction='row' spacing={4}>
-              <img src={image} alt="Will's Face"
-                width='250' height='250'
-                className='roundedImage'
-              />
-              <Stack spacing={2}>
-                <Box/>
-                <Typography variant='h2' color="tertiary.main">
-                  About Me
-                </Typography>
-                <Typography variant='body5' color="tertiary.main">
-                  I'm an engineer aiming to improve educational resources
-                  through my work.
-                  I am expected to graduate UC Santa Cruz in Spring 2023
-                  with a B.S in Computer Science
-                  and am working toward specializing in database systems
-                  for my graduate degree.
-                </Typography>
-              </Stack>
-            </Stack>
-          </Box>
-          <Box
-            sx={{
-              mt: 0.5, background: '#EDBEA4', width: '100%', padding: '20px',
-            }}
-            id="experience"
-          >
-            <Typography variant='h3' color='tertiary.main'
-              sx={{ml: 5}}
-            >
-              Experience
-            </Typography>
-            <Timeline align="left">
-              {experiences.map((exp, index) => (
-                <TimelineItem>
-                  <TimelineOppositeContent style={{flex: 0.3}}>
-                    <Stack>
-                      <Typography variant='h6' color='tertiary.main'>
-                        {exp.title}
-                      </Typography>
-                      <Typography variant='body4' color='tertiary.main'>
-                        {exp.time}
-                      </Typography>
-                    </Stack>
-                  </TimelineOppositeContent>
-                  <TimelineSeparator>
-                    <TimelineDot>
-                    </TimelineDot>
-                    {index !== experiences.length - 1 ?
-                      <TimelineConnector/> : null}
-                  </TimelineSeparator>
-                  <TimelineContent>
-                    <Stack>
-                      <Typography variant='h5' color='tertiary.main'>
-                        {exp.company}
-                      </Typography>
-                      <Typography variant='body3' color='tertiary.main'>
-                        {exp.content}
-                      </Typography>
-                    </Stack>
-                  </TimelineContent>
-                </TimelineItem>
-              ))}
-            </Timeline>
-          </Box>
-          <Box
-            sx={{
-              width: '100%', padding: '20px',
-            }}
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            flex={1}
-            id="projects"
-          >
-            <Stack spacing={4}>
-              <Box
-                sx={{
-                  width: '100%',
-                }}
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                flex={1}
-                id="projects"
-              >
-                <Typography variant='h3' color='tertiary.main'>
-                  Projects
-                </Typography>
-              </Box>
-              <Stack direction='row' spacing={4}>
-                <Card sx={{minWidth: 500, background: '#e3e3e3'}}>
-                  <CardContent>
-                    <Typography sx={{fontSize: 14}}
-                      color="#111111" gutterBottom
-                    >
-                      Discord Bot
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                      Not Clash
-                    </Typography>
-                    <Typography sx={{mb: 1.5}} color="#808080">
-                      Python
-                    </Typography>
-                    <Typography variant="body2">
-                      Facilitates LoL 5v5 matches, stores in MySQL database
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small"
-                      href="https://github.com/williamsantosa/Not-Clash"
-                    >
-                      Visit Repository
-                    </Button>
-                  </CardActions>
-                </Card>
-                <Card sx={{minWidth: 500, background: '#e3e3e3'}}>
-                  <CardContent>
-                    <Typography sx={{fontSize: 14}}
-                      color="#111111" gutterBottom
-                    >
-                      Desktop App
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                      YouToo
-                    </Typography>
-                    <Typography sx={{mb: 1.5}} color="#808080">
-                      Python
-                    </Typography>
-                    <Typography variant="body2">
-                      Downloads YouTube videos from streams.
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small"
-                      href="https://github.com/williamsantosa/YouToo"
-                    >
-                      Visit Repository
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Stack>
-            </Stack>
-          </Box>
-        </Stack>
+          <Box sx={{ml: 5}}/>
+          <AboutMe/>
+        </Box>
         <Box
           sx={{
-            mt: 0.5, width: '100%', padding: '20px',
-            background: '#808080',
+            mt: 0.5, background: '#EDBEA4', width: '100%', padding: '20px',
+          }}
+          id="experience"
+        >
+          <Experience/>
+        </Box>
+        <Box
+          sx={{
+            width: '100%', padding: '20px',
           }}
           display="flex"
           justifyContent="center"
           alignItems="center"
           flex={1}
-          id="contact"
+          id="projects"
         >
-          <Stack>
-            <Stack direction='row'>
-              <Button href="https://github.com/williamsantosa">
-                <GitHubIcon sx={{color: 'white'}}
-                />
-              </Button>
-              <Button href="https://www.linkedin.com/in/williamsantosa/">
-                <LinkedInIcon sx={{color: 'white'}}/>
-              </Button>
-              <Button href="mailto:williamwsantosa@gmail.com">
-                <EmailIcon sx={{color: 'white'}}/>
-              </Button>
-            </Stack>
-          </Stack>
+          <Projects/>
         </Box>
-      </ThemeProvider>
-    </>
+      </Stack>
+      <Box
+        sx={{
+          mt: 0.5, width: '100%', padding: '20px',
+          background: '#808080',
+        }}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        flex={1}
+        id="contact"
+      >
+        <Footer/>
+      </Box>
+    </ThemeProvider>
   );
 }
 
