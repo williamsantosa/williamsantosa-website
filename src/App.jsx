@@ -1,10 +1,3 @@
-/*
- * Copyright (C) 2018-2022 David C. Harrison. All right reserved.
- *
- * You may not use, distribute, publish, or modify this code without
- * the express written permission of the copyright holder.
- */
-
 import React from 'react';
 import './App.css';
 import Bar from './components/Bar.jsx';
@@ -13,15 +6,9 @@ import Home from './components/Home.jsx';
 import AboutMe from './components/AboutMe.jsx';
 import Experience from './components/Experience.jsx';
 import Projects from './components/Projects.jsx';
-// import {useState, useEffect, useCallback} from 'react';
 import {CssBaseline, Box, Stack} from '@mui/material/';
 import {ThemeProvider, createTheme} from '@mui/material/styles';
-// import {deepPurple, pink} from '@mui/material/colors';
 import homeImage from './media/home.jpg';
-// import MenuIcon from '@mui/icons-material/Menu';
-// import InboxIcon from '@mui/icons-material/Inbox';
-// import MailIcon from '@mui/icons-material/Mail';
-// import ClearIcon from '@mui/icons-material/Clear';
 
 const theme = createTheme({
   palette: {
