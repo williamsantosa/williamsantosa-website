@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/williamsantosa-website/static/css/main.a94c84f7.css",
-    "main.js": "/williamsantosa-website/static/js/main.25d6d22c.js",
+    "main.js": "/williamsantosa-website/static/js/main.05877b9f.js",
     "static/media/portrait.jpg": "/williamsantosa-website/static/media/portrait.ed45909114fe013186fd.jpg",
     "static/media/home.jpg": "/williamsantosa-website/static/media/home.48cefcc25ecc4875a3f4.jpg",
     "index.html": "/williamsantosa-website/index.html",
     "main.a94c84f7.css.map": "/williamsantosa-website/static/css/main.a94c84f7.css.map",
-    "main.25d6d22c.js.map": "/williamsantosa-website/static/js/main.25d6d22c.js.map"
+    "main.05877b9f.js.map": "/williamsantosa-website/static/js/main.05877b9f.js.map"
   },
   "entrypoints": [
     "static/css/main.a94c84f7.css",
-    "static/js/main.25d6d22c.js"
+    "static/js/main.05877b9f.js"
   ]
 }
