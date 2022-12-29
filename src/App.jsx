@@ -85,7 +85,7 @@ function App() {
           padding: '20px',
           width: '70%',
         }}
-          id="about"
+        id="about"
         >
           <Box sx={{ml: 5}}/>
           <AboutMe/>

@@ -5,6 +5,38 @@ import {
   Stack, Box,
 } from '@mui/material/';
 
+const projects = require('../data/projects.json');
+
+const cardify = (e) => {
+  return (
+    <Card sx={{minWidth: 400, background: '#e3e3e3'}}>
+      <CardContent>
+        <Typography sx={{fontSize: 14}}
+          color="#111111" gutterBottom
+        >
+          {e.type}
+        </Typography>
+        <Typography variant="h5" component="div">
+          {e.title}
+        </Typography>
+        <Typography sx={{mb: 1.5}} color="#808080">
+          {e.language}
+        </Typography>
+        <Typography variant="body2">
+          {e.description}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small"
+          href={e.link}
+        >
+          {e.action}
+        </Button>
+      </CardActions>
+    </Card>
+  );
+};
+
 /**
  * Returns Projects component
  * @return {object}
@@ -26,57 +58,30 @@ function Projects() {
           Projects
         </Typography>
       </Box>
-      <Stack direction='row' spacing={4}>
-        <Card sx={{minWidth: 500, background: '#e3e3e3'}}>
-          <CardContent>
-            <Typography sx={{fontSize: 14}}
-              color="#111111" gutterBottom
-            >
-              Discord Bot
-            </Typography>
-            <Typography variant="h5" component="div">
-              Not Clash
-            </Typography>
-            <Typography sx={{mb: 1.5}} color="#808080">
-              Python
-            </Typography>
-            <Typography variant="body2">
-              Facilitates LoL 5v5 matches, stores in MySQL database.
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small"
-              href="https://github.com/williamsantosa/Not-Clash"
-            >
-              Visit Repository
-            </Button>
-          </CardActions>
-        </Card>
-        <Card sx={{minWidth: 500, background: '#e3e3e3'}}>
-          <CardContent>
-            <Typography sx={{fontSize: 14}}
-              color="#111111" gutterBottom
-            >
-              Desktop App
-            </Typography>
-            <Typography variant="h5" component="div">
-              YouToo
-            </Typography>
-            <Typography sx={{mb: 1.5}} color="#808080">
-              Python
-            </Typography>
-            <Typography variant="body2">
-              Downloads YouTube videos from streams.
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small"
-              href="https://github.com/williamsantosa/YouToo"
-            >
-              Visit Repository
-            </Button>
-          </CardActions>
-        </Card>
+      <Stack
+        sx={{
+          width: '100%',
+        }}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        flex={1}
+        spacing={4}
+      >
+        {projects.map((element, index) => {
+          if (index % 2 === 1) {
+            return null;
+          }
+          return (projects.length > index + 1 ?
+            <Stack direction='row' spacing={4}>
+              {cardify(element)}
+              {cardify(projects[index+1])}
+            </Stack> :
+            <Stack>
+              {cardify(element)}
+            </Stack>
+          );
+        })}
       </Stack>
     </Stack>
   );
