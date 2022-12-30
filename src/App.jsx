@@ -67,7 +67,7 @@ function App() {
       <CssBaseline/>
       <Bar/>
       <Box
-        sx={{mt: 0.5, background: '#EDBEA4', height: '100vh', width: '100%'}}
+        sx={{mt: 0.5, background: '#EDBEA4', height: '100vh', width: '100vw'}}
         style={styles.paperContainer}
       >
         <Home/>
@@ -92,7 +92,7 @@ function App() {
         </Box>
         <Box
           sx={{
-            mt: 0.5, background: '#EDBEA4', width: '100%', padding: '20px',
+            mt: 0.5, background: '#EDBEA4', width: '100vw', padding: '20px',
           }}
           id="experience"
         >
@@ -100,7 +100,7 @@ function App() {
         </Box>
         <Box
           sx={{
-            width: '100%', padding: '20px',
+            width: '100vw', padding: '20px',
           }}
           display="flex"
           justifyContent="center"
@@ -113,7 +113,7 @@ function App() {
       </Stack>
       <Box
         sx={{
-          mt: 0.5, width: '100%', padding: '20px',
+          mt: 0.5, width: '100vw', padding: '20px',
           background: '#808080',
         }}
         display="flex"

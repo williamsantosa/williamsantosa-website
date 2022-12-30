@@ -12,7 +12,7 @@ function Footer() {
   return (
     <Stack
       sx={{
-        width: '100%',
+        width: '100vw',
       }}
       display="flex"
       justifyContent="center"

@@ -46,7 +46,7 @@ function Projects() {
     <Stack spacing={4}>
       <Box
         sx={{
-          width: '100%',
+          width: '100vw',
         }}
         display="flex"
         justifyContent="center"
@@ -60,7 +60,7 @@ function Projects() {
       </Box>
       <Stack
         sx={{
-          width: '100%',
+          width: '100vw',
         }}
         display="flex"
         justifyContent="center"
