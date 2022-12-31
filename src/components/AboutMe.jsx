@@ -8,12 +8,17 @@ import image from '../media/portrait.jpg';
  */
 function AboutMe() {
   return (
-    <Stack direction='row' spacing={4}>
+    <Stack direction='row' spacing={4}
+      sx={{width: '80vw'}}
+    >
+      <Box/>
       <img src={image} alt="Will's Face"
         width='250' height='250'
         className='roundedImage'
       />
-      <Stack spacing={2}>
+      <Stack spacing={2}
+        sx={{width: '50%'}}
+      >
         <Box/>
         <Typography variant='h2' color="tertiary.main">
           About Me

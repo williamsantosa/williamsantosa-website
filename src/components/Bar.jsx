@@ -8,7 +8,10 @@ import {AppBar, Toolbar, Button, Box} from '@mui/material/';
 function Bar() {
   return (
     <AppBar position="static" id="home"
-      style={{background: 'transparent'}}
+      style={{
+        background: 'transparent',
+        width: '100vw',
+      }}
     >
       <Toolbar>
         <Box

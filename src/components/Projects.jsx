@@ -9,7 +9,7 @@ const projects = require('../data/projects.json');
 
 const cardify = (e) => {
   return (
-    <Card sx={{minWidth: 400, background: '#e3e3e3'}}>
+    <Card sx={{width: '30vw', background: '#e3e3e3'}}>
       <CardContent>
         <Typography sx={{fontSize: 14}}
           color="#111111" gutterBottom

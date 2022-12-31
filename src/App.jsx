@@ -81,13 +81,16 @@ function App() {
         flex={1}
       >
         <Box sx={{
-          mt: 4, ml: '1%',
+          mt: 4,
           padding: '20px',
-          width: '70%',
+          width: '100vw',
         }}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        flex={1}
         id="about"
         >
-          <Box sx={{ml: 5}}/>
           <AboutMe/>
         </Box>
         <Box
