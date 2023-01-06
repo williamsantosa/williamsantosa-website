@@ -3,7 +3,7 @@
     "type": "Discord Bot",
     "title": "Not Clash",
     "language": "Python",
-    "description": "Facilitates LoL 5v5 matches, stores in MySQL database.",
+    "description": "Facilitates LoL 5v5 matches, stores in SQLite database.",
     "action": "Visit Repository",
     "link": "https://github.com/williamsantosa/Not-Clash"
   },
